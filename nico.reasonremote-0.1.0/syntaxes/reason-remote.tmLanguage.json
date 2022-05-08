@@ -1,0 +1,80 @@
+{
+  "name": "reason-remote",
+  "scopeName": "text.remotemap",
+  "comment": "Reason remote map",
+  "patterns": [
+    {
+      "comment": "Line Comments",
+      "match": "(//.*$)",
+      "captures": {
+          "1" :{
+              "name": "comment.line.remote"
+          }
+      }
+    },
+    {
+        "match": "^Propellerhead Remote Mapping File",
+        "name": "keyword.header"
+    },
+    {
+        "match": "^File Format Version",
+        "name": "keyword.file_format_version"
+    },
+    {
+        "match": "^Control Surface Manufacturer",
+        "name": "keyword.manufacturer"
+    },
+    {
+        "match": "^Control Surface Model",
+        "name": "keyword.model"
+    },
+    {
+        "match": "^Scope",
+        "name": "keyword.scope"
+    },
+    {
+        "match": "^Map Version",
+        "name": "keyword.map_version"
+    },
+    {
+        "match": "^Map",
+        "name": "keyword.map"
+    },
+    {
+        "captures": {
+          "1": {
+            "name": "keyword.define_group"
+          },
+          "2": {
+            "name": "variable.parameter"
+          }
+        },
+        "match": "^(Define Group)\t([a-zA-Z0-9_]*)"
+    },
+    {
+        "name": "string.quoted.double.n",
+        "begin": "\"",
+        "end": "\"",
+        "patterns": [
+          {
+            "name": "constant.character.escape.n",
+            "match": "\\\\."
+          }
+        ]
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "variable.name"
+        },
+        "2": {
+          "name": "variable.parameter"
+        }
+      },
+      "match": "([a-zA-Z0-9_-]*)=([a-zA-Z0-9_-]*)"
+    },
+    {
+      "include": "source.jinja"
+    }
+  ]
+}

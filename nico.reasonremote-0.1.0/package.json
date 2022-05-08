@@ -1,0 +1,43 @@
+{
+	"name": "reasonremote",
+	"displayName": "Reason Remote",
+	"description": "Reason Studios Remote file definition",
+	"version": "0.1.0",
+	"publisher": "nico",
+	"author": "Niklas Jakobsson",
+	"engines": {
+		"vscode": "^1.22.0"
+	},
+	"license": "MIT",
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"remote",
+		"reason-remote",
+		"reason"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "reason-remote",
+				"aliases": [
+					"Reason Remote",
+					"remote",
+					"reason-remote"
+				],
+				"extensions": [
+					".remotemap"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "reason-remote",
+				"scopeName": "text.remotemap",
+				"path": "./syntaxes/reason-remote.tmLanguage.json"
+			}
+		]
+	}
+}
